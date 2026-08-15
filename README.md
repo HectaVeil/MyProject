@@ -1,6 +1,5 @@
 Islamic Reminder
 This is a small project that shows a random Islamic reminder.  
-The reminders are short phrases like “سبحان الله” or “أستغفر الله”.
 
 ## What is this project?
 It is a simple web page that gives one reminder when you open it.  
@@ -15,5 +14,5 @@ There is also a button to copy the reminder.
 
 ## Why I made it?
 I made this project to practice HTML, CSS, and JavaScript.  
-I also wanted something simple that helps me remember Allah.
+I also wanted something simple that helps poeple remember Allah.
 
