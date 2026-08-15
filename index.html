@@ -157,5 +157,56 @@
     </div>
   </main>
 
+  <script>
+    const reminders = [
+      "سبحان الله وبحمده",
+      "سبحان الله العظيم",
+      "لا إله إلا الله وحده لا شريك له",
+      "اللهم اغفر لي وارحمني",
+      "أستغفر الله العظيم",
+      "اللهم صلِّ على محمد",
+      "لا حول ولا قوة إلا بالله",
+      "حسبي الله ونعم الوكيل",
+      "اللهم اجعل هذا اليوم بركة وخيرًا",
+      "اللهم إني أسألك العفو والعافية"
+    ];
+
+    const reminderEl = document.getElementById("reminder");
+    let lastIndex = -1;
+
+    function getRandomReminder() {
+      // Fade out effect
+      reminderEl.classList.add("fade-out");
+
+      setTimeout(() => {
+        // Avoid repeating the same reminder twice in a row
+        let randomIndex;
+        do {
+          randomIndex = Math.floor(Math.random() * reminders.length);
+        } while (randomIndex === lastIndex && reminders.length > 1);
+        
+        lastIndex = randomIndex;
+        reminderEl.textContent = reminders[randomIndex];
+        
+        // Fade in effect
+        reminderEl.classList.remove("fade-out");
+        reminderEl.classList.add("fade-in");
+      }, 250);
+    }
+ function copyReminder() {
+      navigator.clipboard.writeText(reminderEl.textContent).then(() => {
+        const copyBtn = document.getElementById("copyBtn");
+        const originalText = copyBtn.textContent;
+        copyBtn.textContent = "تم النسخ!";
+        setTimeout(() => {
+          copyBtn.textContent = originalText;
+        }, 1500);
+      });
+    }
+
+    // Initialize with a random phrase on load
+    getRandomReminder();
+   
+  </script>
 </body>
 </html>
